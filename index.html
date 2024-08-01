@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeiterfassung</title>
+    <link rel="stylesheet" href="Auftragszeiterfassung.css">
+</head>
+<body>
+    <header>
+        <h1>Zeiterfassung</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Zeiterfassung starten/stoppen</h2>
+            <form id="time-form">
+                <label for="auftrag">Auftragsnummer:</label>
+                <input type="text" id="auftrag" required>
+                <div class="error-message" id="error-auftrag"></div>
+
+                <label for="kunde">Kunde:</label>
+                <input type="text" id="kunde" required>
+                <div class="error-message" id="error-kunde"></div>
+
+                <label for="artikel">Artikelnummer:</label>
+                <input type="text" id="artikel" required>
+                <div class="error-message" id="error-artikel"></div>
+
+                <label for="arbeitsgang">Arbeitsgang:</label>
+                <select id="arbeitsgang" required>
+                    <option value="">Bitte wählen...</option>
+                    <option value="Lasern">Lasern</option>
+                    <option value="Rohrlasern">Rohrlasern</option>
+                    <option value="Stanzen">Stanzen</option>
+                    <option value="Kanten">Kanten</option>
+                    <option value="Schweißen (Edelstahl)">Schweißen (Edelstahl)</option>
+                    <option value="Schweißen (Stahl)">Schweißen (Stahl)</option>
+                    <option value="Fräsen">Fräsen</option>
+                    <option value="Drehen">Drehen</option>
+                    <option value="Richten">Richten</option>
+                    <option value="Montage">Montage</option>
+                </select>
+                <div class="error-message" id="error-arbeitsgang"></div>
+
+                <label for="mitarbeiter">Mitarbeiter:</label>
+                <input type="text" id="mitarbeiter" required>
+                <div class="error-message" id="error-mitarbeiter"></div>
+
+                <button type="button" id="start-button">Start</button>
+                <button type="button" id="stop-button" disabled>Ende</button>
+            </form>
+
+            <div id="timer">
+                <p id="current-time">00:00:00</p>
+            </div>
+
+            <div id="feedback" class="hidden">Zeiterfassung läuft...</div>
+
+            <a href="log.html" id="view-logs">Logeinträge anzeigen</a>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
